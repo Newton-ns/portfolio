@@ -1,0 +1,16 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Full-stack personal portfolio",
+  "scripts": {
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "npx live-server frontend --port=3000",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "install:backend": "cd backend && npm install",
+    "seed": "cd backend && node scripts/seed.js",
+    "setup": "npm run install:backend && echo '✅ Setup complete! Run: npm run dev'"
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.0"
+  }
+}

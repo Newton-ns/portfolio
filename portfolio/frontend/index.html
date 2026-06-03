@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alex Rivera — Full-Stack Developer</title>
+  <meta name="description" content="Full-stack developer specializing in React, Node.js, and cloud architecture." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">AR<span class="dot">.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Hire Me</a>
+    <button class="nav-burger" id="navBurger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#projects" class="mobile-link">Projects</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <canvas id="heroCanvas"></canvas>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span class="badge-dot"></span>
+        Available for work
+      </div>
+      <h1 class="hero-title reveal">
+        <span class="line">Building</span>
+        <span class="line accent">digital</span>
+        <span class="line">products</span>
+      </h1>
+      <p class="hero-sub reveal">Full-Stack Developer — React · Node.js · Cloud</p>
+      <div class="hero-actions reveal">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      <span>scroll</span>
+    </div>
+    <div class="hero-counter reveal">
+      <div class="counter-item">
+        <span class="count" data-target="4">0</span>
+        <span class="count-label">Years Exp.</span>
+      </div>
+      <div class="counter-item">
+        <span class="count" data-target="32">0</span>
+        <span class="count-label">Projects</span>
+      </div>
+      <div class="counter-item">
+        <span class="count" data-target="18">0</span>
+        <span class="count-label">Clients</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-label reveal">/ About Me</div>
+      <div class="about-grid">
+        <div class="about-visual reveal">
+          <div class="avatar-wrap">
+            <div class="avatar-ring"></div>
+            <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex&backgroundColor=b6e3f4" alt="Alex Rivera" class="avatar" id="profileAvatar" />
+            <div class="avatar-tag">
+              <span>4+ yrs</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <h2 class="section-title reveal">Crafting experiences<br/><em>with purpose</em></h2>
+          <p class="about-desc reveal" id="profileBio">
+            I'm a passionate full-stack developer building high-performance web applications that solve real problems. I specialize in React, Node.js, and cloud architecture — writing clean, scalable code from prototype to production.
+          </p>
+          <div class="about-tags reveal">
+            <span class="tag">Problem Solver</span>
+            <span class="tag">Open Source</span>
+            <span class="tag">Mentor</span>
+            <span class="tag">Coffee Addict</span>
+          </div>
+          <div class="about-ctas reveal">
+            <a href="#contact" class="btn btn-primary">Let's Talk</a>
+            <a href="/resume.pdf" class="btn btn-outline" download>Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-label reveal">/ Projects</div>
+      <div class="projects-header">
+        <h2 class="section-title reveal">Selected<br/><em>Work</em></h2>
+        <div class="project-filters reveal">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="backend">Backend</button>
+        </div>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <!-- Populated by JS -->
+        <div class="projects-loading">
+          <div class="spinner"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-label reveal">/ Skills</div>
+      <h2 class="section-title reveal">Tech<br/><em>Stack</em></h2>
+      <div class="skills-tabs reveal">
+        <button class="skill-tab active" data-cat="frontend">Frontend</button>
+        <button class="skill-tab" data-cat="backend">Backend</button>
+        <button class="skill-tab" data-cat="database">Database</button>
+        <button class="skill-tab" data-cat="devops">DevOps</button>
+        <button class="skill-tab" data-cat="tools">Tools</button>
+      </div>
+      <div class="skills-content" id="skillsContent">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-label reveal">/ Contact</div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 class="section-title reveal">Let's build<br/><em>something</em><br/>together</h2>
+          <p class="contact-desc reveal">Have a project in mind? I'm open to freelance, full-time, or collaborative opportunities. Reach out — I reply within 24 hours.</p>
+          <div class="contact-links reveal">
+            <a href="mailto:alex@example.com" class="contact-link">
+              <span class="link-icon">✉</span>
+              alex@example.com
+            </a>
+            <a href="https://github.com/alexrivera" target="_blank" class="contact-link">
+              <span class="link-icon">⌥</span>
+              github.com/alexrivera
+            </a>
+            <a href="https://linkedin.com/in/alexrivera" target="_blank" class="contact-link">
+              <span class="link-icon">◈</span>
+              linkedin.com/in/alexrivera
+            </a>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="john@email.com" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Inquiry" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+              <span class="btn-text">Send Message</span>
+              <span class="btn-spinner" style="display:none;">Sending...</span>
+            </button>
+            <div class="form-msg" id="formMsg"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#" class="footer-logo">AR<span class="dot">.</span></a>
+        <p class="footer-text">Designed & built with ♥ by Alex Rivera</p>
+        <div class="footer-links">
+          <a href="https://github.com/alexrivera" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/alexrivera" target="_blank">LinkedIn</a>
+          <a href="https://twitter.com/alexrivera" target="_blank">Twitter</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Project Modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <div class="modal-body" id="modalBody"></div>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
